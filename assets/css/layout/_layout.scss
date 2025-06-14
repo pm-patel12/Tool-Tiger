@@ -1,0 +1,176 @@
+@use "./variables" as var;
+
+// =========================
+// Site Header
+// =========================
+
+.site-header{
+  .nav-bar{
+    .inner{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      .brand-wrap{
+        max-width: 160px;
+        width: 100%;
+        display: block;
+        img{
+          height: 100%;
+          width: 100%;
+          object-fit: contain;
+        }
+      }
+      .menuToggle{
+        border: 1.5px solid var.$border-color;
+        padding: 10px;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        &:hover{
+          background-color: var.$border-color;
+        }
+        img{
+          height: 20px;
+          width: 20px;
+        }
+        @media (min-width:1199px){
+          display: none;
+        }
+      }
+      .menu-links{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        .menu{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 2rem 2rem;
+
+          .menu-item{
+            margin: 0;padding: 0;
+            a{
+              font-size: 16px;
+              line-height: 26px;
+              font-weight: 500;
+              color: var.$dark-text;
+              text-decoration: none;
+            }
+            &:hover{
+              a{
+                color: var.$primary-color;
+              }
+            }
+          }
+        }        
+        .action-btns{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 1rem;
+        }     
+        @media (max-width:1199px) {
+          position: fixed;
+          top: 0;
+          right: -110%;
+          bottom: 0;
+          z-index: 100;
+          width: 320px;
+          background-color: var.$white;
+          flex-flow: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          padding: 2rem 1rem;
+          &.show{
+            right: 0;
+          }
+          .menuToggle{
+            background-color: var.$secondary-color;
+            color: var.$white;
+            img{
+              filter: brightness(100);
+              border-bottom: var.$secondary-color;
+            }
+          }
+          .menu{
+            flex-flow: column;
+            width: 100%;
+            justify-content: flex-end;
+            gap: 1rem;
+            .menu-item{
+              width: 100%;
+              border: 1px solid var.$border-color;
+              text-align: center;
+              padding: 0.6rem 1rem;
+              border-radius: 8px;
+              &.active{
+                border-color: var.$primary-color ;
+              }
+            }
+          }
+          .action-btns{
+            flex-flow: column;
+            width: 100%;
+            a,button{
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// =========================
+// Site Footer
+// =========================
+
+.site-footer{
+  .brand-wrap{
+    max-width: 160px;
+    width: 100%;
+    height: auto;
+    display: block;
+    img{
+      height: auto;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+  .ratings-badge{
+    max-width: 140px;
+    width: 100%;
+    height: auto;
+    img{
+      height: auto;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+  .copyright{
+    border-top: 1px solid var.$border-color;
+    flex-direction: column;
+  }
+  [data-tag]{
+    display: flex;
+    align-items: center;
+    &::after{
+      content: attr(data-tag);
+      display: inline-block;
+      margin-left: 6px;
+      width: fit-content;
+      padding: 0px 6px 2px 6px;
+      border-radius: 4px;
+      color: var.$white;
+      background: linear-gradient(0deg, #1E2939 0%, #6A7282 100%);
+      font-size: 10px;
+      line-height: 20px;
+      text-align: center;
+    }
+  }
+}
