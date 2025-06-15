@@ -606,6 +606,14 @@
     max-width: 600px;
     width: 100%;
 
+    &.lg {
+        max-width: 800px;
+    }
+
+    &.highlated {
+        border: 2px solid var.$primary-color;
+    }
+
     &::before {
         content: "";
         background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.875 14.2499C9.36 14.2499 10.7325 13.7324 11.8125 12.8774L15 16.0649L16.0575 15.0074L12.87 11.8199C13.7575 10.6993 14.2411 9.31199 14.2425 7.88245C14.2425 4.36495 11.385 1.50745 7.8675 1.50745C4.35 1.50745 1.5 4.35745 1.5 7.87495C1.5 11.3924 4.3575 14.2499 7.875 14.2499ZM7.875 2.99995C10.56 2.99995 12.75 5.18995 12.75 7.87495C12.75 10.5599 10.56 12.7499 7.875 12.7499C5.19 12.7499 3 10.5599 3 7.87495C3 5.18995 5.19 2.99995 7.875 2.99995Z' fill='%234A5565'/%3E%3C/svg%3E%0A");
@@ -616,7 +624,6 @@
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
-
     }
 
     input {
@@ -785,4 +792,139 @@
             line-height: 26px;
         }
     }
+}
+
+// =======================
+// Alphabetical Filter
+// =======================
+.alphabetical-filter-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 10px;
+
+    label {
+        height: 32px;
+        width: auto;
+        padding: 0 10px;
+        background-color: #F3F4F6;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        line-height: 14px;
+        cursor: pointer;
+    }
+
+    input[type="radio"] {
+        display: none;
+        opacity: 0;
+
+        &:checked {
+            &+label {
+                background-color: var.$secondary-color;
+                color: var.$white;
+            }
+        }
+    }
+}
+
+// =======================
+// Tool Categories Wrap
+// =======================
+.tool-categories-wrap {
+    #tool-categories {
+        columns: 2;
+
+        &>* {
+            break-inside: avoid;
+            page-break-inside: avoid;
+            -webkit-column-break-inside: avoid;
+        }
+
+        @media (max-width:991px) {
+            columns: unset;
+        }
+    }
+
+    .accordion-item {
+        margin-bottom: 20px;
+        border: 1px solid var.$border-color;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .accordion-collapse {
+        ul {
+            li {
+                padding: 12px 0;
+                margin: 0;
+                border-bottom: 1px solid var.$border-color;
+
+                a {
+                    font-size: 15px;
+                    line-height: 25px;
+                    font-weight: normal;
+                    color: rgba(var.$dark-text, 80%);
+
+                    &:hover {
+                        color: var.$primary-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// =======================
+// FAQs Category
+// =======================
+.faq-categories-wrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+
+    .faq-category {
+        padding: 26px 16px;
+        border: 1px solid var.$border-color;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column;
+        gap: 18px;
+        font-size: 18px;
+        line-height: 28px;
+        color: var.$light-text;
+        font-weight: 500;
+        text-align: center;
+        cursor: pointer;
+
+        img {
+            height: 24px;
+            width: 24px;
+            min-height: 24px;
+            min-width: 24px;
+            object-fit: contain;
+            object-position: center;
+        }
+    }
+
+    input[type="radio"] {
+        display: none;
+        opacity: 0;
+
+        &:checked {
+            &+label {
+                color: var.$dark-text;
+                box-shadow: 0px 76px 21px 0px rgba(0, 0, 0, 0%), 0px 48px 19px 0px rgba(0, 0, 0, 1%), 0px 27px 16px 0px rgba(0, 0, 0, 5%), 0px 12px 12px 0px rgba(0, 0, 0, 9%), 0px 3px 7px 0px rgba(0, 0, 0, 10%);
+                border: 1px solid var.$primary-color;
+            }
+        }
+    }
+
 }

@@ -203,8 +203,17 @@
       cursor: pointer;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
+      justify-content: flex-start;
+      gap: 12px;
+
+      img {
+        height: 30px;
+        width: 30px;
+        min-height: 30px;
+        min-width: 30px;
+        object-fit: contain;
+        object-position: center;
+      }
 
       &::after {
         content: "";
@@ -216,6 +225,7 @@
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
+        margin-left: auto;
       }
 
       &.collapsed {
