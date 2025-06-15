@@ -631,7 +631,7 @@
         border: none;
         outline: none;
         font-size: var.$font-size-h4;
-        font-weight: 600;
+        font-weight: 500;
     }
 }
 
@@ -781,6 +781,14 @@
             text-align: center;
             margin: 0;
             padding: 0;
+
+            span {
+                color: var.$primary-color;
+                display: inline;
+                font-size: inherit;
+                font-weight: inherit;
+                line-height: inherit;
+            }
         }
 
         p {
@@ -927,4 +935,126 @@
         }
     }
 
+}
+
+
+// =======================
+// About US page
+// =======================
+
+.about-hero-sec {
+    .logo-icon {
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center top;
+            opacity: 0.1;
+        }
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 26px;
+    }
+}
+
+.counter-card {
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 1.5px 0px 1px rgba(10, 13, 18, 5%);
+
+    &:hover {
+        box-shadow: 7px 12px 6px -2px rgba(10, 13, 18, 0.05);
+    }
+
+    .icon {
+        height: 28px;
+        width: 28px;
+        min-height: 28px;
+        min-width: 28px;
+        margin-bottom: 20px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+        }
+    }
+
+    span {
+        font-size: clamp(1.25rem, 0.5971rem + 2.1763vw, 2.5rem);
+        line-height: clamp(2rem, 1.3471rem + 2.1763vw, 3.25rem);
+        color: var.$primary-color;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    p {
+        font-size: clamp(1rem, 0.9347rem + 0.2176vw, 1.125rem);
+        line-height: clamp(1.625rem, 1.5597rem + 0.2176vw, 1.75rem);
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.about-img-banner {
+    width: 100%;
+    height: 520px;
+    border-radius: 20px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+
+// =======================
+// Policy Content page
+// =======================
+
+.policy-content {
+    ol {
+        list-style: decimal-leading-zero;
+        padding-left: 20px;
+
+        ul {
+            list-style: disc;
+            padding-left: 30px;
+        }
+    }
+
+    p,
+    li {
+        font-size: 16px;
+        line-height: 26px;
+        margin-bottom: 20px;
+        color: #364153;
+        text-decoration: none;
+        font-weight: 400;
+
+        strong {
+            font-weight: 600;
+        }
+    }
+
+    a {
+        font-size: 16px;
+        line-height: 26px;
+        color: #364153;
+        text-decoration: none;
+
+        &:hover {
+            color: var.$primary-color;
+        }
+    }
 }
